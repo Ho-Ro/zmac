@@ -5661,7 +5661,7 @@ struct item *item_lookup(char *name, struct item *table, int table_size)
 	while (*p) {
 		char ch = *p++;
 		if (ch >= 'A' && ch <= 'Z') ch += 'a' - 'A';
-		hash += hash * 67 + ch - 113;
+		hash = hash * 67 + ch - 113;
 	}
 	hash %= table_size;
 	ip = &table[hash];
